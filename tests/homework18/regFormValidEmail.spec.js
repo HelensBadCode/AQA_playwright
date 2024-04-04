@@ -15,7 +15,7 @@ test.describe("Register new user", () => {
         const signUpBtn = page.locator('button', { hasText: 'Sign up' });
         const signUpPopup = page.locator('app-signup-modal');
         const errorBorder = page.locator('.is-invalid');
-        const errorMassage = page.locator('.invalid-feedback');
+        const errorMassage = page.locator('#signupEmail + .invalid-feedback');
         const registerBtn = page.locator('button', { hasText: 'Register' });
 
         await signUpBtn.click();
@@ -36,7 +36,7 @@ test.describe("Register new user", () => {
         const signUpBtn = page.locator('button', { hasText: 'Sign up' });
         const signUpPopup = page.locator('app-signup-modal');
         const errorBorder = page.locator('.is-invalid');
-        const errorMassage = page.locator('.invalid-feedback');
+        const errorMassage = page.locator('#signupEmail + .invalid-feedback');
         const registerBtn = page.locator('button', { hasText: 'Register' });
 
         await signUpBtn.click();
@@ -57,7 +57,7 @@ test.describe("Register new user", () => {
         const signUpBtn = page.locator('button', { hasText: 'Sign up' });
         const signUpPopup = page.locator('app-signup-modal');
         const errorBorder = page.locator('.is-invalid');
-        const errorMassage = page.locator('.invalid-feedback');
+        const errorMassage = page.locator('#signupEmail + .invalid-feedback');
         const registerBtn = page.locator('button', { hasText: 'Register' });
 
         await signUpBtn.click();

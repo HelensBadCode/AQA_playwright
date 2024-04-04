@@ -14,7 +14,7 @@ test.describe("Register new user", () => {
         const signUpBtn = page.locator('button', { hasText: 'Sign up' });
         const signUpPopup = page.locator('app-signup-modal');
         const errorBorder = page.locator('.is-invalid');
-        const errorMassage = page.locator('.invalid-feedback');
+        const errorMassage = page.locator('#signupLastName + .invalid-feedback');
         const registerBtn = page.locator('button', { hasText: 'Register' });
 
         await signUpBtn.click();
@@ -35,7 +35,7 @@ test.describe("Register new user", () => {
         const signUpBtn = page.locator('button', { hasText: 'Sign up' });
         const signUpPopup = page.locator('app-signup-modal');
         const errorBorder = page.locator('.is-invalid');
-        const errorMassage = page.locator('.invalid-feedback');
+        const errorMassage = page.locator('#signupLastName + .invalid-feedback');
         const registerBtn = page.locator('button', { hasText: 'Register' });
 
         await signUpBtn.click();
@@ -56,7 +56,7 @@ test.describe("Register new user", () => {
         const signUpBtn = page.locator('button', { hasText: 'Sign up' });
         const signUpPopup = page.locator('app-signup-modal');
         const errorBorder = page.locator('.is-invalid');
-        const errorMassage = page.locator('.invalid-feedback');
+        const errorMassage = page.locator('#signupLastName + .invalid-feedback');
         const registerBtn = page.locator('button', { hasText: 'Register' });
 
         await signUpBtn.click();
@@ -77,7 +77,7 @@ test.describe("Register new user", () => {
         const signUpBtn = page.locator('button', { hasText: 'Sign up' });
         const signUpPopup = page.locator('app-signup-modal');
         const errorBorder = page.locator('.is-invalid');
-        const errorMassage = page.locator('.invalid-feedback');
+        const errorMassage = page.locator('#signupLastName + .invalid-feedback');
         const registerBtn = page.locator('button', { hasText: 'Register' });
 
         await signUpBtn.click();
@@ -113,3 +113,4 @@ async function checkValidation(page, errorMassageLocator, errorBorderLocator, re
     await expect(errorBorderLocator).toHaveCSS('border-color', 'rgb(220, 53, 69)');
     await expect(registerBtnLocator).toBeDisabled();
 }
+``

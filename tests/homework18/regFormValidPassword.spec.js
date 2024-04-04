@@ -15,7 +15,7 @@ test.describe("Validation registration form", () => {
         const signUpBtn = page.locator('button', {hasText: 'Sign up'});
         const signUpPopup = page.locator('app-signup-modal');
         const errorBorder = page.locator('.is-invalid');
-        const errorMassage = page.locator('.invalid-feedback');
+        const errorMassage = page.locator('#signupPassword + .invalid-feedback');
         const registerBtn = page.locator('button', {hasText: 'Register'});
 
         await signUpBtn.click();
@@ -32,11 +32,11 @@ test.describe("Validation registration form", () => {
         await checkValidation(page, signUpPopup.locator(errorMassage), signUpPopup.locator(errorBorder), registerBtn,"Password required");
     });
 
-    test.only("Test invalid password validation", async ({page}) => {
+    test("Test invalid password validation", async ({page}) => {
         const signUpBtn = page.locator('button', {hasText: 'Sign up'});
         const signUpPopup = page.locator('app-signup-modal');
         const errorBorder = page.locator('.is-invalid');
-        const errorMassage = page.locator('.invalid-feedback');
+        const errorMassage = page.locator('#signupPassword + .invalid-feedback');
         const registerBtn = page.locator('button', {hasText: 'Register'});
 
         await signUpBtn.click();
@@ -57,7 +57,7 @@ test.describe("Validation registration form", () => {
         const signUpBtn = page.locator('button', {hasText: 'Sign up'});
         const signUpPopup = page.locator('app-signup-modal');
         const errorBorder = page.locator('.is-invalid');
-        const errorMassage = page.locator('.invalid-feedback');
+        const errorMassage = page.locator('#signupPassword + .invalid-feedback');
         const registerBtn = page.locator('button', {hasText: 'Register'});
 
         await signUpBtn.click();
@@ -79,7 +79,7 @@ test.describe("Validation registration form", () => {
         const signUpBtn = page.locator('button', { hasText: 'Sign up' });
         const signUpPopup = page.locator('app-signup-modal');
         const errorBorder = page.locator('.is-invalid');
-        const errorMassage = page.locator('.invalid-feedback');
+        const errorMassage = page.locator('#signupPassword + .invalid-feedback');
         const registerBtn = page.locator('button', { hasText: 'Register' });
 
         await signUpBtn.click();
@@ -100,7 +100,7 @@ test.describe("Validation registration form", () => {
         const signUpBtn = page.locator('button', { hasText: 'Sign up' });
         const signUpPopup = page.locator('app-signup-modal');
         const errorBorder = page.locator('.is-invalid');
-        const errorMassage = page.locator('.invalid-feedback');
+        const errorMassage = page.locator('#signupPassword + .invalid-feedback');
         const registerBtn = page.locator('button', { hasText: 'Register' });
 
         await signUpBtn.click();
@@ -121,11 +121,11 @@ test.describe("Validation registration form", () => {
         await expect(registerBtn).toBeDisabled();
     });
 
-    test("Test unmatched passwords validation", async ({ page }) => {
+    test.only("Test unmatched passwords validation", async ({ page }) => {
         const signUpBtn = page.locator('button', { hasText: 'Sign up' });
         const signUpPopup = page.locator('app-signup-modal');
         const errorBorder = page.locator('.is-invalid');
-        const errorMassage = page.locator('.invalid-feedback');
+        const errorMassage = page.locator('#signupRepeatPassword + .invalid-feedback');
         const registerBtn = page.locator('button', { hasText: 'Register' });
 
         await signUpBtn.click();
@@ -145,11 +145,11 @@ test.describe("Validation registration form", () => {
 
     });
 
-    test("Test form without enter re-entering password", async ({ page }) => {
+    test.only("Test form without enter re-entering password", async ({ page }) => {
         const signUpBtn = page.locator('button', { hasText: 'Sign up' });
         const signUpPopup = page.locator('app-signup-modal');
         const errorBorder = page.locator('.is-invalid');
-        const errorMassage = page.locator('.invalid-feedback');
+        const errorMassage = page.locator('#signupRepeatPassword + .invalid-feedback');
         const registerBtn = page.locator('button', { hasText: 'Register' });
 
         await signUpBtn.click();
