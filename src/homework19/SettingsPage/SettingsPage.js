@@ -1,4 +1,5 @@
 import BasePage from "../BasePage.js";
+import RemoveUserPopup from "./components/RemoveUserPopup.js";
 
 export default class SettingsPage extends BasePage{
 
@@ -11,6 +12,7 @@ export default class SettingsPage extends BasePage{
 
     async removeUserAction(){
         await this.removeUserButton.click();
+        return new RemoveUserPopup(this._page);
     }
 
 }

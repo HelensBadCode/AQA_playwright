@@ -2,9 +2,8 @@ import {expect, test} from "@playwright/test";
 import {WelcomePage} from "../../src/homework19/WelcomePage/WelcomePage.js";
 import {USER_DATA} from "../../src/data/userData.js";
 import GaragePage from "../../src/homework19/GaragePage/GaragePage.js";
-import SettingsPage from "../../src/homework19/SettingsPage/SettingsPage.js";
-import {SideBarMenu} from "../../src/homework19/GaragePage/components/SideBarMenu.js";
-import RemoveUserPopup from "../../src/homework19/SettingsPage/components/RemoveUserPopup.js";
+
+
 
 
 test.describe("Registration new user", ()=> {
@@ -22,25 +21,25 @@ test.describe("Registration new user", ()=> {
 
         test.afterEach(async ({page}) => {
             const garagePage = new GaragePage(page);
-            const settingsPage = new SettingsPage(page);
-            const removeUserPopup = new RemoveUserPopup(page);
-            const sideBar = new SideBarMenu(page);
+            const header = await garagePage.presentProfile();
             await garagePage.navigate();
-            await expect(garagePage.profileBtnInHeader).toBeVisible();
+            await expect(header.profileBtnInHeader).toBeVisible();
             await expect (garagePage.titleGaragePage).toContainText('Garage');
 
-            await sideBar.openSettingsPage();
+            const sideBar = await garagePage.sideBarInstance();
+            const settingsPage = await sideBar.openSettingsPage();
             await expect(settingsPage.removeUserBlock).toBeVisible();
+            const removePopup = await settingsPage.removeUserAction();
 
-            await settingsPage.removeUserAction();
-            await expect(removeUserPopup.removeUserBtn).toBeVisible();
-            await expect(removeUserPopup.cancelDeleteUserBtn).toBeVisible();
-            await expect(removeUserPopup.removePopupTitle).toContainText('Remove account');
-            await expect(removeUserPopup.removePopupTitle).toContainText('Remove account');await removeUserPopup.confirmDeleteUser();
+            await expect(removePopup.removeUserBtn).toBeVisible();
+            await expect(removePopup.cancelDeleteUserBtn).toBeVisible();
+            await expect(removePopup.removePopupTitle).toContainText('Remove account');
+            await expect(removePopup.removePopupTitle).toContainText('Remove account');
+            await removePopup.confirmDeleteUser();
 
         })
 
-        test.only("User should be able to register", async ({page}) => {
+        test("User should be able to register", async ({page}) => {
             await expect(popup.titlePopup).toContainText('Registration');
 
             await popup.nameImput.fill(USER_DATA.POSITIVE_CASE.inputNameValue);
@@ -51,8 +50,6 @@ test.describe("Registration new user", ()=> {
             await popup.registerBtn.click();
 
             await expect(page, "User should be redirected to garage page").toHaveURL('/panel/garage');
-
-
 
         })
 
