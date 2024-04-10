@@ -21,12 +21,12 @@ test.describe("Registration new user", ()=> {
 
         test.afterEach(async ({page}) => {
             const garagePage = new GaragePage(page);
-            const header = await garagePage.presentProfile();
+            const header = await garagePage.header;
             await garagePage.navigate();
             await expect(header.profileBtnInHeader).toBeVisible();
             await expect (garagePage.titleGaragePage).toContainText('Garage');
 
-            const sideBar = await garagePage.sideBarInstance();
+            const sideBar = await garagePage.sideBar;
             const settingsPage = await sideBar.openSettingsPage();
             await expect(settingsPage.removeUserBlock).toBeVisible();
             const removePopup = await settingsPage.removeUserAction();
