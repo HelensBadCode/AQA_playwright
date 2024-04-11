@@ -1,11 +1,13 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv';
+import testConfig from './config/config';
 
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// require('dotenv').config();
+dotenv.config();
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -27,11 +29,15 @@ const config  = defineConfig({
     headless: false,
     //if true browser don't show, false - will be show test run
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'https://qauto.forstudy.space/',
-    httpCredentials: {
-      username: 'guest',
-      password: 'welcome2qauto'
-    },
+
+    // baseURL: process.env.BASE_URL,
+    // httpCredentials: {
+    //   username: process.env.HTTP_CREDENTIALS_USERNAME,
+    //   password: process.env.HTTP_CREDENTIALS_PASSWORD
+    // },
+    //or this way
+    baseURL: testConfig.baseUrl,
+    httpCredentials:testConfig.httpCredentials,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on',
