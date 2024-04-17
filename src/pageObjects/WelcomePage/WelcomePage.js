@@ -1,5 +1,6 @@
 import {SignUpPopup} from "./components/SignUpPopup.js";
 import BasePage from "../BasePage.js";
+import {SignInPopup} from "./components/SignInPopup.js";
 
 
 export class WelcomePage extends BasePage{
@@ -11,6 +12,11 @@ export class WelcomePage extends BasePage{
     async openSignUpPopup(){
         await this.signUpBtn.click();
         return new SignUpPopup(this._page);
+    }
+
+    async openSignInPopup(){
+        await this.header.signInButton.click();
+        return new SignInPopup(this._page);
     }
 
 }

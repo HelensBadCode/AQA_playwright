@@ -1,0 +1,1 @@
+export const TEST_USER_STORAGE_STATE_PATH = './state/test-user-state.json';
