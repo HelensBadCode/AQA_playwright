@@ -52,11 +52,18 @@ const config  = defineConfig({
       testMatch: /tests\/setup\/.*\/*.setup.js/
     },
 
+    // {
+    //   name: 'chromium',
+    //   use: { ...devices['Desktop Chrome'] },
+    //   dependencies: ['setup']
+    // },
+
     {
-      name: 'chromium',
+      name: 'API tests',
+      testMatch: /tests\/api-tests\/.*\/*.spec.js/,
       use: { ...devices['Desktop Chrome'] },
       dependencies: ['setup']
-    },
+    }
     //
     // {
     //   name: 'firefox',
