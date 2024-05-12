@@ -8,7 +8,7 @@ test.describe('Garage (fixtures with storage state)', () => {
         await expect(garagePage.addCarButton).toBeVisible();
     });
 
-    test.only('New car should be add for already log in user', async ({garagePage, page}) => {
+    test('New car should be add for already log in user', async ({garagePage, page}) => {
         const existingCarsQuantity = await garagePage.getExistingCarsCount();
 
         const addCarPopup = await garagePage.openAddCarPopup();

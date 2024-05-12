@@ -8,7 +8,7 @@ test.describe('Garage (custom fixtures)', () => {
         await expect(garagePage.addCarButton).toBeVisible();
     });
 
-    test.only('New car should be add for log in user', async ({garagePage}) => {
+    test('New car should be add for log in user', async ({garagePage}) => {
         const existingCarsQuantity = await garagePage.getExistingCarsCount();
 
         const addCarPopup = await garagePage.openAddCarPopup();
@@ -23,13 +23,6 @@ test.describe('Garage (custom fixtures)', () => {
         await carPromise;
         const result =  await garagePage.getExistingCarsCount();
         expect(result).toBe(existingCarsQuantity + 1);
-
-
-
-
-
-
-
 
     });
 

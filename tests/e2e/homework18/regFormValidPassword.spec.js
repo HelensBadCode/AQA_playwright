@@ -121,7 +121,7 @@ test.describe("Validation registration form", () => {
         await expect(registerBtn).toBeDisabled();
     });
 
-    test.only("Test unmatched passwords validation", async ({ page }) => {
+    test("Test unmatched passwords validation", async ({ page }) => {
         const signUpBtn = page.locator('button', { hasText: 'Sign up' });
         const signUpPopup = page.locator('app-signup-modal');
         const errorBorder = page.locator('.is-invalid');
@@ -145,7 +145,7 @@ test.describe("Validation registration form", () => {
 
     });
 
-    test.only("Test form without enter re-entering password", async ({ page }) => {
+    test("Test form without enter re-entering password", async ({ page }) => {
         const signUpBtn = page.locator('button', { hasText: 'Sign up' });
         const signUpPopup = page.locator('app-signup-modal');
         const errorBorder = page.locator('.is-invalid');
