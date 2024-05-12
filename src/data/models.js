@@ -123,23 +123,5 @@ export const MODELS = {
             "carBrandId": 5,
             "title": "Scudo"
         }
-    },
-    6:{
-        Gojo: {
-            "id": 24,
-            "carBrandId": 4,
-            "title": "Gojo"
-        },
-        Panda: {
-            "id": 25,
-            "carBrandId": 4,
-            "title": "Panda"
-        },
-        Itadori: {
-            "id": 26,
-            "carBrandId": 4,
-            "title": "Itadori"
-        }
     }
-
 }
