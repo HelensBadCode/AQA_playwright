@@ -1,7 +1,7 @@
 import {expect, test} from "@playwright/test";
-import {USER_LOGIN} from "../../../src/data/userLogIn.js";
-import {WelcomePage} from "../../../src/pageObjects/WelcomePage/WelcomePage.js";
-import GaragePage from "../../../src/pageObjects/GaragePage/GaragePage.js";
+import {USER_LOGIN} from "../../../../src/data/userLogIn.js";
+import {WelcomePage} from "../../../../src/pageObjects/WelcomePage/WelcomePage.js";
+import GaragePage from "../../../../src/pageObjects/GaragePage/GaragePage.js";
 
 test.describe('test',() =>{
     let welcomePage

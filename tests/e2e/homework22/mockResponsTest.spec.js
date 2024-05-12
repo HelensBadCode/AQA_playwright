@@ -1,5 +1,5 @@
-import {test, expect} from "../../src/fixtures/userLogInStateFixture.js";
-import {PROFILE_DATA_RESPONSE} from "../../src/pageObjects/ProfilePage/fixtures/profile_data.js";
+import {test, expect} from "../../../src/fixtures/userLogInStateFixture.js";
+import {PROFILE_DATA_RESPONSE} from "../../../src/pageObjects/ProfilePage/fixtures/profile_data.js";
 
 
 test.describe('Profile (network)', async () => {

@@ -26,7 +26,7 @@ const config  = defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    headless: false,
+    headless: true,
     //if true browser don't show, false - will be show test run
     /* Base URL to use in actions like `await page.goto('/')`. */
 
@@ -57,6 +57,12 @@ const config  = defineConfig({
     //   use: { ...devices['Desktop Chrome'] },
     //   dependencies: ['setup']
     // },
+    {
+      name: 'chromium UI tests',
+      use: { ...devices['Desktop Chrome'] },
+      testMatch: /tests\/e2e\/.*\/*.spec.js/,
+      dependencies: ['setup']
+    },
 
     {
       name: 'API tests',

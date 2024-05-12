@@ -1,5 +1,5 @@
-import {test, expect} from '../../../src/fixtures/userGarageFixture.js';
-import {CAR_DATA} from "../../../src/data/carData.js";
+import {test, expect} from '../../../../src/fixtures/userGarageFixture.js';
+import {CAR_DATA} from "../../../../src/data/carData.js";
 
 
 test.describe('Garage (custom fixtures)', () => {
