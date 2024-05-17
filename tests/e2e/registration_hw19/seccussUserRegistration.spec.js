@@ -1,7 +1,7 @@
 import {expect, test} from "@playwright/test";
-import {WelcomePage} from "../../src/pageObjects/WelcomePage/WelcomePage.js";
-import {USER_DATA} from "../../src/data/userData.js";
-import GaragePage from "../../src/pageObjects/GaragePage/GaragePage.js";
+import {WelcomePage} from "../../../src/pageObjects/WelcomePage/WelcomePage.js";
+import {USER_DATA} from "../../../src/data/userData.js";
+import GaragePage from "../../../src/pageObjects/GaragePage/GaragePage.js";
 
 
 

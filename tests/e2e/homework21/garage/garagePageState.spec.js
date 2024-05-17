@@ -1,14 +1,14 @@
-import {test, expect} from '../../../src/fixtures/userGarageFixture.js';
-import {CAR_DATA} from "../../../src/data/carData.js";
+import {test, expect} from '../../../../src/fixtures/userLogInStateFixture.js';
+import {CAR_DATA} from "../../../../src/data/carData.js";
 
 
-test.describe('Garage (custom fixtures)', () => {
+test.describe('Garage (fixtures with storage state)', () => {
 
     test('Add car button should be visible', async ({garagePage, page}) => {
         await expect(garagePage.addCarButton).toBeVisible();
     });
 
-    test.only('New car should be add for log in user', async ({garagePage}) => {
+    test('New car should be add for already log in user', async ({garagePage, page}) => {
         const existingCarsQuantity = await garagePage.getExistingCarsCount();
 
         const addCarPopup = await garagePage.openAddCarPopup();
@@ -23,13 +23,6 @@ test.describe('Garage (custom fixtures)', () => {
         await carPromise;
         const result =  await garagePage.getExistingCarsCount();
         expect(result).toBe(existingCarsQuantity + 1);
-
-
-
-
-
-
-
 
     });
 
